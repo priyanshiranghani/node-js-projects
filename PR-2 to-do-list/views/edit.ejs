@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome User Management</title>
+    <style>
+        body {
+            background-color: #f4f7fc;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 12px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #4CAF50;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>User Management System</h1>
+    <div class="container">
+        <h2>Add User</h2>
+        <form action="/adduserRecord" method="post">
+            <input type="hidden" name="editid" value="<%= single.id %>">
+            <table>
+                <tr>
+                    <td>Task:</td>
+                    <td><input type="text" name="task" value="<%= single.task %>" required></td>
+                </tr>
+                <tr>
+                    <td>status:</td>
+                    <td><input type="text" name="status" value="<%= single.status %>" required></td>
+                </tr>
+                <tr>
+                    <td>deadline:</td>
+                    <td><input type="datetime-local" name="deadline" value="<%= single.deadline %>" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="<%= single.id ? 'Update User' : 'Add User' %>">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+
+</html>

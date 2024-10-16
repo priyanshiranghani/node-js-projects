@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index HTML Page</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://source.unsplash.com/1600x900/?nature,abstract');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #ffcc00;
+        }
+
+        .btn-custom {
+            font-size: 1.2em;
+            padding: 12px 30px;
+            border-radius: 30px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-primary {
+            background-color: #ff5733;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #c70039;
+        }
+
+        .btn-secondary {
+            background-color: #2980b9;
+            border: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: #1c5987;
+        }
+
+        .btn-success {
+            background-color: #27ae60;
+            border: none;
+        }
+
+        .btn-success:hover {
+            background-color: #1e8449;
+        }
+
+        .btn-info {
+            background-color: #f39c12;
+            border: none;
+        }
+
+        .btn-info:hover {
+            background-color: #d35400;
+        }
+
+        .btn-container a {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Welcome to the Index Page</h1>
+        <div class="btn-container">
+            <a href="/home" class="btn btn-primary btn-custom">Home</a>
+            <a href="/about" class="btn btn-secondary btn-custom">About</a>
+            <a href="/pr" class="btn btn-success btn-custom">Product</a>
+            <a href="/con" class="btn btn-info btn-custom">Contact</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
