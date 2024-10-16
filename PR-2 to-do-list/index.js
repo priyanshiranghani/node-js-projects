@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
     return res.render('index', {
         all: users
-    }),mahadev
+    }),mahadev,
 })
 
 app.post('/adduserRecord', (req, res) => {
