@@ -1,0 +1,114 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View User</title>
+</head>
+
+<body>
+    <div align="center">
+        <h1>View User</h1>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Book_Name</th>
+                    <th>Book_Price</th>
+                    <th>Book_Pages</th>
+                    <th>Book_Author</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% record.map((val,i)=>{
+                    
+                    const {id,bookname,bookprice,bookpages,bookauthor} = val;
+                    %>
+                    <tr>
+                        <td><%= ++i %></td>
+                        <td><%= bookname %></td>
+                        <td><%= bookprice %></td>
+                     
+                        <td><%= bookpages %></td>
+                        <td><%= bookauthor %></td>
+                        <td>
+                            <a href="/editRecord?id=<%= id %>">Edit</a>
+                            <a href="/deletRecord?deletId=<%= id %>">Delete </a>
+                        </td>
+                    </tr>
+                <% })  %>
+            </tbody>
+        </table>
+
+        <a href="/add">add</a>
+    </div>
+</body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View User</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-md-12 col-sm-12">
+                <h1 class="text-center mb-4 text-primary">View User</h1> <!-- Blue heading -->
+
+                <!-- Bootstrap Table -->
+                <table class="table table-bordered table-hover border-primary"> <!-- Blue border -->
+                    <thead class="bg-primary text-white"> <!-- Blue header with white text -->
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Book Name</th>
+                            <th scope="col">Book Price</th>
+                            <th scope="col">Book Pages</th>
+                            <th scope="col">Book Author</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% record.map((val, i) => { 
+                            const { id, bookname, bookprice, bookpages, bookauthor } = val; %>
+                            <tr>
+                                <th scope="row"><%= ++i %></th>
+                                <td><%= bookname %></td>
+                                <td><%= bookprice %></td>
+                                <td><%= bookpages %></td>
+                                <td><%= bookauthor %></td>
+                                <td>
+                                    <a href="/editRecord?id=<%= id %>" class="btn btn-sm btn-primary">Edit</a> <!-- Blue Edit button -->
+                                    <a href="/deletRecord?deletId=<%= id %>" class="btn btn-sm btn-outline-primary">Delete</a> <!-- Blue outlined Delete button -->
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+
+                <!-- Add New Book Button -->
+                <div class="text-center">
+                    <a href="/add" class="btn btn-primary">Add New Book</a> <!-- Blue button -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+

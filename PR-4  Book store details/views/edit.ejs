@@ -1,0 +1,128 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+</head>
+
+<body>
+    <div align="center">
+        <h1>Add User</h1>
+
+        <form method="post" action="/updateRecord">
+            <input type="hidden" name="editid" value="<%= data.id  %>">
+            <table border="1">
+                <tr>
+                    <td>Book_Name:-</td>
+                    <td><input type="text" name="bookname" value="<%= data.bookname  %>"></td>
+                </tr>
+                <tr>
+                    <td>Book_Price:-</td>
+                    <td><input type="text" name="bookprice" value="<%= data.bookprice  %>"></td>
+                </tr>
+
+                <tr>
+                    <td>Book_Pages:-</td>
+                    <td>
+                        <select name="bookpages">
+                            <option>---Select Pages---</option>
+                            <% const pages=["1 to 100","101 to 200","201 to 300","301 to 400"]; pages.map((ci)=>{
+                                %>
+                                <option <% if(data.pages==ci) {%> selected <%} %> value="<%= ci %>">
+                                            <%= ci %>
+                                </option>
+                                <% })%>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Book_Author:-</td>
+                    <td><input type="text" name="bookauthor" value="<%= data.bookauthor  %>"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit"></td>
+                </tr>
+            </table>
+        </form>
+
+
+        <a href="/">add</a>
+    </div>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-12">
+                <h1 class="text-center mb-4 text-primary">Add User</h1> <!-- Blue Heading -->
+
+                <!-- Form for adding user -->
+                <form method="post" action="/updateRecord" class="border border-primary p-4 rounded shadow bg-light">
+                    <input type="hidden" name="editid" value="<%= data.id %>">
+
+                    <!-- Book Name -->
+                    <div class="mb-3">
+                        <label for="bookname" class="form-label text-primary">Book Name</label> <!-- Blue label -->
+                        <input type="text" class="form-control border-primary" id="bookname" name="bookname" value="<%= data.bookname %>" required>
+                    </div>
+
+                    <!-- Book Price -->
+                    <div class="mb-3">
+                        <label for="bookprice" class="form-label text-primary">Book Price</label> <!-- Blue label -->
+                        <input type="text" class="form-control border-primary" id="bookprice" name="bookprice" value="<%= data.bookprice %>" required>
+                    </div>
+
+                    <!-- Book Pages -->
+                    <div class="mb-3">
+                        <label for="bookpages" class="form-label text-primary">Book Pages</label> <!-- Blue label -->
+                        <select class="form-select border-primary" id="bookpages" name="bookpages" required>
+                            <option selected disabled>---Select Pages---</option>
+                            <% 
+                                let pageOptions = ["1 to 100", "101 to 200", "201 to 300", "301 to 400"]; 
+                                pageOptions.forEach((ci) => { %>
+                                    <option value="<%= ci %>" <%= data.bookpages === ci ? "selected" : "" %>><%= ci %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+
+                    <!-- Book Author -->
+                    <div class="mb-3">
+                        <label for="bookauthor" class="form-label text-primary">Book Author</label> <!-- Blue label -->
+                        <input type="text" class="form-control border-primary" id="bookauthor" name="bookauthor" value="<%= data.bookauthor %>" required>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Submit</button> <!-- Blue submit button -->
+                    </div>
+                </form>
+
+                <!-- Add link -->
+                <div class="text-center mt-3">
+                    <a href="/" class="btn btn-link text-primary">Go Back</a> <!-- Blue link -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
