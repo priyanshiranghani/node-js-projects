@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -51,4 +51,102 @@
             <a href="/viewrecord">View</a>
         </div>
     </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Record</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f9f9f9;
+        }
+        h2 {
+            color: #28a745;
+        }
+        .btn-green {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-green:hover {
+            background-color: #218838;
+        }
+        table {
+            border: 2px solid #28a745;
+        }
+        table th, table td {
+            border: 1px solid #28a745;
+        }
+        a.btn-green {
+            text-decoration: none;
+            color: white;
+        }
+        a.btn-green:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-4">
+        <div class="text-center">
+            <h2>Add Record</h2>
+        </div>
+        <form action="/insertRecord" method="post" enctype="multipart/form-data" class="mx-auto" style="max-width: 600px;">
+            <table class="table table-bordered">
+                <tr>
+                    <td class="text-success fw-bold">Types of movie:</td>
+                    <td>
+                        <select name="movie" class="form-select">
+                            <option value="">--- Select movie ---</option>
+                            <% 
+                            movie = ["gujrati", "bollywood", "hollywood", "hindi"];
+                            movie.map((movie) => { 
+                            %>
+                            <option value="<%= movie %>"><%= movie %></option>
+                            <% }); %>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-success fw-bold">Movie name:</td>
+                    <td><input type="text" name="moviename" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td class="text-success fw-bold">Movie intro:</td>
+                    <td><input type="text" name="movieintro" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td class="text-success fw-bold">Movie price:</td>
+                    <td><input type="text" name="movieprice" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td class="text-success fw-bold">Movie picture:</td>
+                    <td><input type="file" name="image" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-center">
+                        <button type="submit" class="btn btn-green px-4">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div class="text-center mt-4">
+            <a href="/viewrecord" class="btn btn-green px-4">View Records</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
+
+
+
+
+
+
+
