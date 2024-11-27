@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Record</title>
+    <!-- Bootstrap CSS -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+        rel="stylesheet">
+        <style>
+            body{
+                background-image: url(../uploads/blog-post.jpeg);
+                background-size: cover;
+            }
+        </style>
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header text-center bg-primary text-white">
+                        <h2>Add blog</h2>
+                    </div>
+                    <div class="card-body">
+                        <form action="/insertRecord" method="post" enctype="multipart/form-data">
+                        
+                            <div class="mb-3">
+                                <label for="blogname" class="form-label">Blog Name:</label>
+                                <input type="text" name="blogname" id="blogname" 
+                                       class="form-control" placeholder="Enter Blog name">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Description:</label>
+                                <input type="text" name="description" id="description" 
+                                       class="form-control" placeholder="Enter description">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Blog Picture:</label>
+                                <input type="file" name="image" id="image" class="form-control">
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Add Blog</button>
+                            </div>
+                        </form>
+                        <div class="text-center mt-3">
+                            <a href="/viewrecord" class="btn btn-link">View Blog Records</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js">
+    </script>
+</body>
+</html>
