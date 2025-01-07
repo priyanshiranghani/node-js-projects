@@ -152,6 +152,16 @@ const postNewpassword = async(req,res) => {
         return false;
     }
 }
+
+const myProfile = async(req,res)=>{
+    try{
+
+    }catch(err){
+        console.log(err);
+        return false
+    }
+}
+
 module.exports = {
-    loginPage,registerPage,registerUser,loginUser,dashboardPage,logoutUser,forgotPassword,otpPage,postOtp,newpass,postNewpassword
+    loginPage,registerPage,registerUser,loginUser,dashboardPage,logoutUser,forgotPassword,otpPage,postOtp,newpass,postNewpassword,myProfile
 }
