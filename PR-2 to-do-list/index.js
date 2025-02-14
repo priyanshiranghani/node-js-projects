@@ -2,7 +2,6 @@ const express = require('express');
 
 const port = 9999;
 
-
 const app = express();
 
 app.use(express.urlencoded());
@@ -55,7 +54,6 @@ app.get('/delet', (req, res) => {
     users = d;
     console.log("users ssucces..");
     return res.redirect('/');
-
 })
 
 app.get('/edit', (req, res) => {
